@@ -45,11 +45,11 @@ h1,h2,h3{font-family:var(--head);font-weight:600;letter-spacing:-.02em;line-heig
 
 .sitedemo{position:absolute;top:0;left:0;right:0;z-index:25;min-height:36px;display:flex;align-items:center;justify-content:center;gap:14px;background:var(--gold);color:#111;font-size:12.5px;padding:6px 40px;text-align:center}
 .sitedemo[hidden]{display:none}
-.sitedemo i{font-style:normal}
+.sitedemo i{font-style:normal}.sitedemo i.m{display:none}
 .sitedemo a{font-weight:600;text-decoration:underline;white-space:nowrap}
 .sitedemo button{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:0;font-size:14px;padding:6px;color:#111}
 body.hasdemo .top{top:36px}
-@media (max-width:700px){.sitedemo i{display:none}.sitedemo{justify-content:flex-start;padding-left:16px}}
+@media (max-width:700px){.sitedemo i{display:none}.sitedemo i.m{display:inline}.sitedemo{justify-content:flex-start;padding-left:16px}}
 .reghint{font-size:12.5px;color:var(--mute);margin-top:8px}
 .reghint button{background:none;border:0;padding:0;font-weight:600;color:var(--goldd);text-decoration:underline;font-size:12.5px}
 
@@ -224,6 +224,7 @@ body.ty #thanks{display:block}
 .tyc .tick{width:74px;height:74px;border-radius:50%;border:1px solid rgba(195,161,132,.6);display:flex;align-items:center;justify-content:center;margin:20px auto 22px}
 .tyc h3{font-size:38px;margin:14px 0 14px}
 .tyc .tyl{color:rgba(255,255,255,.65);font-size:16.5px;max-width:440px;margin:0 auto}
+.tydemo{display:inline-block;margin-top:16px;font-size:13px;color:#111;background:var(--gold2);padding:7px 12px;border-radius:3px}
 .tyc .ref{display:inline-block;margin-top:22px;border:1px solid var(--line);font-weight:600;font-size:12.5px;padding:8px 14px;letter-spacing:.16em;color:var(--gold2)}
 .tyc .sum{text-align:left;margin-top:28px;border-top:1px solid var(--line);font-size:15px}
 .tyc .sum div{display:flex;justify-content:space-between;gap:14px;padding:13px 0;border-bottom:1px solid var(--line)}
@@ -521,6 +522,8 @@ body.owner #app{display:block}
 .ws{background:#fff;width:100%;max-width:480px;border-radius:14px 14px 0 0;padding:16px 16px 20px;animation:rise .4s cubic-bezier(.2,.8,.2,1);max-height:92vh;display:flex;flex-direction:column}
 .wsh{display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:15px;margin-bottom:12px}
 .wsh span{display:flex;align-items:center;gap:8px}
+.wsdemo{font-size:12px;font-weight:600;color:#7b5a24;background:#faf5ea;border-radius:4px;padding:6px 10px;margin:-4px 0 10px}
+.wsb .dl{color:#027eb5;text-decoration:underline;cursor:default}
 .wsh span:before{content:"";width:9px;height:9px;border-radius:50%;background:#25d366;flex:none}
 .wsh button{background:none;border:0;font-size:16px;color:var(--mute)}
 .wsc{background:#efeae2;border-radius:8px;padding:12px;overflow:auto;display:grid;gap:8px}
@@ -545,7 +548,7 @@ body.owner #app{display:block}
 
 <!-- =========================== PUBLIC WEBSITE =========================== -->
 <div id="site">
-<div class="sitedemo" id="sitedemo" hidden><span><b>Demo website</b><i> · Try booking a car in, then see what the garage sees</i></span><a href="#office/diary">Open the garage system →</a><button type="button" id="sd-x" aria-label="Hide demo bar">✕</button></div>
+<div class="sitedemo" id="sitedemo" hidden><span><b>Demo mock-up</b><i> · Some features are simulated. Try booking a car in, then see what the garage sees.</i><i class="m"> · some features simulated</i></span><a href="#office/diary">Open the garage system →</a><button type="button" id="sd-x" aria-label="Hide demo bar">✕</button></div>
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#top"><img src="img/logo-mark.png" alt="Ashworth Garage"><span>Ashworth Garage<small>Astley · Manchester</small></span></a>
@@ -667,7 +670,7 @@ body.owner #app{display:block}
           <input class="i reg" id="reg" placeholder="AB12 CDE" autocomplete="off" maxlength="8">
           <button type="button" class="regfind" id="regfind">Find car</button>
         </div>
-        <p class="reghint" id="reghint" hidden>Demo: try <button type="button" data-reg="MA19 KXT">MA19 KXT</button> or <button type="button" data-reg="BD68 TXO">BD68 TXO</button></p>
+        <p class="reghint" id="reghint" hidden>Demo: the reg check is simulated. Try <button type="button" data-reg="MA19 KXT">MA19 KXT</button> or <button type="button" data-reg="BD68 TXO">BD68 TXO</button></p>
         <div class="vcard" id="vcard" hidden></div>
         <div class="carwrap" id="carwrap" hidden><label class="f" for="car">Make &amp; model</label><input class="i" id="car" placeholder="e.g. Ford Focus"></div>
       </div>
@@ -758,6 +761,7 @@ body.owner #app{display:block}
       <div class="eyebrow l">Your time is held</div>
       <h3>Thanks, <span id="d-name"></span>. You're booked in.</h3>
       <p class="tyl">Andy will confirm your booking on WhatsApp shortly. If he needs to ask anything about the job, he'll give you a call.</p>
+      <p class="tydemo" id="tydemo">Demo: this is a mock-up, so no real booking has been made and nobody will contact you.</p>
       <div class="ref" id="d-ref"></div>
       <div class="sum" id="d-sum"></div>
       <div class="next">
@@ -775,7 +779,7 @@ body.owner #app{display:block}
 
 <!-- =========================== GARAGE OFFICE SYSTEM =========================== -->
 <div id="app">
-  <div class="demobar" id="demobar"><span><b>Demo</b> · no real messages are sent</span><span class="dl"><a id="resetdemo">Reset demo</a><a href="#top">View website</a></span></div>
+  <div class="demobar" id="demobar"><span><b>Demo mock-up</b> · WhatsApp, payments and reg check are simulated. Your test data is only saved on this device.</span><span class="dl"><a id="resetdemo">Reset demo</a><a href="#top">View website</a></span></div>
   <div class="ah">
     <div class="r1">
       <img src="img/logo-mark.png" alt="">
@@ -811,6 +815,7 @@ body.owner #app{display:block}
 <div class="washeet" id="washeet" hidden>
   <div class="ws">
     <div class="wsh"><span id="ws-title">WhatsApp sent</span><button type="button" id="ws-x" aria-label="Close">✕</button></div>
+    <div class="wsdemo">Demo preview · this message was not really sent</div>
     <div class="wsc" id="ws-msgs"></div>
     <div class="wsf" id="ws-foot"></div>
     <button type="button" class="big go" id="ws-ok">Done</button>
@@ -941,7 +946,7 @@ body.owner #app{display:block}
   const showWA = (title, msgs, foot) => {
     if (VIDEO) return;
     $('#ws-title').textContent = title;
-    $('#ws-msgs').innerHTML = (Array.isArray(msgs) ? msgs : [{m: msgs}]).map(x => `<div class="wsb ${x.me ? 'me' : ''}">${x.img ? `<img src="${x.img}" alt="">` : ''}${esc(x.m).replace(/(https:\/\/\S+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>')}</div>`).join('');
+    $('#ws-msgs').innerHTML = (Array.isArray(msgs) ? msgs : [{m: msgs}]).map(x => `<div class="wsb ${x.me ? 'me' : ''}">${x.img ? `<img src="${x.img}" alt="">` : ''}${esc(x.m).replace(/(https:\/\/\S+)/g, u => u.startsWith(BIZ.review) ? `<a href="${u}" target="_blank" rel="noopener">${u}</a>` : `<span class="dl" title="Demo link, not live yet">${u}</span>`)}</div>`).join('');
     $('#ws-foot').textContent = foot || ''; $('#ws-foot').hidden = !foot; $('#ws-ok').onclick = hideWA; $('#washeet').hidden = false;
   };
   const hideWA = () => { $('#washeet').hidden = true; };
@@ -1029,7 +1034,7 @@ body.owner #app{display:block}
         $('#notmine').onclick = () => { carwrap.hidden = false; $('#car').value = ''; $('#car').focus(); };
       } else {
         $('#car').value = '';
-        vcard.className = 'vcard miss'; vcard.innerHTML = "We couldn't find that registration. Please enter the make and model below.";
+        vcard.className = 'vcard miss'; vcard.innerHTML = VIDEO ? "We couldn't find that registration. Please enter the make and model below." : "<b>Demo:</b> the reg check is simulated, so only the demo plates are found. Please enter the make and model below. The live site will look up any UK reg.";
         carwrap.hidden = false;
       }
     }, 1000);
@@ -1207,7 +1212,7 @@ body.owner #app{display:block}
         <div class="card">
           <div class="dtop"><div><h2>${esc(j.name)}</h2><div class="ref2">${j.ref} · ${esc(j.phone)} · ${SRC[j.source]} booking</div></div>${badge(j.status)}</div>
           ${j.status !== 'cancel' ? `<div class="flow">${['Request', 'Booked', 'Car in', 'Ready', 'Collected'].map((n, i) => `<div class="${i <= si ? 'on' : ''}">${n}</div>`).join('')}</div>` : ''}
-          <div class="acts"><a class="act call" href="tel:${tel}">${ICON.call}Call</a><a class="act wa" href="https://wa.me/${wa}" target="_blank" rel="noopener">${ICON.wa}WhatsApp</a></div>
+          <div class="acts"><button class="act call" data-demo="Demo: this would ring ${esc(first(j))} on ${esc(j.phone)}">${ICON.call}Call</button><button class="act wa" data-demo="Demo: this would open a WhatsApp chat with ${esc(first(j))}">${ICON.wa}WhatsApp</button></div>
         </div>
         <div class="card"><h3>Job card</h3><div class="kv">
           <div><span>Job</span><span>${j.svc} <span class="sub">· ${hrsTxt(j.hrs).toLowerCase()}</span></span></div>
@@ -1524,12 +1529,13 @@ body.owner #app{display:block}
     scrollTo(0, 0);
     if (afterRoute) { const f = afterRoute; afterRoute = null; f(); }
   };
-  if (VIDEO) $('#demobar').style.display = 'none';
+  if (VIDEO) { $('#demobar').style.display = 'none'; $('#tydemo').hidden = true; document.querySelector('.wsdemo').hidden = true; }
 
   // one click handler for the whole office app
   $('#app').addEventListener('click', e => {
     const q = s => e.target.closest(s);
     let el;
+    if ((el = q('[data-demo]'))) { toast(el.dataset.demo); return; }
     if ((el = q('.tab'))) { go(el.dataset.t); return; }
     if ((el = q('[data-job]'))) { const h = '#office/job/' + el.dataset.job; if (location.hash === h) route(); else location.hash = h; return; }
     if ((el = q('[data-open-inv]'))) { location.hash = '#office/inv/' + el.dataset.openInv; return; }
