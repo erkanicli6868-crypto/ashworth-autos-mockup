@@ -230,7 +230,12 @@ body.ty #thanks{display:block}
 .tyb .btn{flex:1}
 @media (max-width:600px){.tyc h3{font-size:30px}.tym{padding-top:10px}.tyh .wrap{height:66px}}
 
-.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:34px;border-top:1px solid var(--rule)}
+.stats div{padding:18px 14px 0 0;font-size:13.5px;color:var(--mute);line-height:1.35}
+.stats div+div{padding-left:18px;border-left:1px solid var(--rule)}
+.stats b{display:block;font-family:var(--head);font-size:38px;font-weight:600;color:var(--goldd);letter-spacing:-.02em;line-height:1.1;margin-bottom:4px}
+@media (max-width:900px){.stats b{font-size:30px}.stats div+div{padding-left:12px}}
 .about .pic{position:relative}
 .about .pic img{width:100%;height:620px;object-fit:cover;object-position:50% 45%}
 .about .pic .yrs{position:absolute;left:-26px;bottom:34px;background:var(--black);color:#fff;padding:22px 24px;max-width:230px}
@@ -597,14 +602,14 @@ body.owner #app{display:block}
 
 <section class="dark" id="work">
   <div class="wrap">
-    <div class="eyebrow">Recent work</div>
-    <h2 class="sh">Real jobs. Real customers.</h2>
+    <div class="eyebrow">Inside the garage</div>
+    <h2 class="sh">Two ramps. Proper kit. Under one roof.</h2>
     <div class="work">
-      <figure class="big"><img src="img/w-jag-sq.jpg" alt="Jaguar XF being repaired"><figcaption>Repair · Jaguar XF</figcaption></figure>
-      <figure><img src="img/w-disc-sq.jpg" alt="New brake disc and caliper fitted"><figcaption>New discs &amp; pads</figcaption></figure>
-      <figure><img src="img/w-pads-sq.jpg" alt="Worn brake pad taken off a Ford Focus"><figcaption>Worn pads replaced</figcaption></figure>
-      <figure><img src="img/w-merc-sq.jpg" alt="Mercedes being worked on"><figcaption>Mercedes service</figcaption></figure>
-      <figure><img src="img/w-van-sq.jpg" alt="The Ashworth mobile mechanic van"><figcaption>Mobile jobs too</figcaption></figure>
+      <figure class="big"><img src="img/g-workshop.jpg" alt="The Ashworth Garage workshop with a car up on the lift"><figcaption>The workshop · Astley</figcaption></figure>
+      <figure><img src="img/g-ramp2.jpg" alt="Mercedes Vito up on ramp 2" style="object-position:50% 30%"><figcaption>Ramp 2</figcaption></figure>
+      <figure><img src="img/g-ramp1.jpg" alt="Ford Transit up on ramp 1 with an Audi below" style="object-position:50% 30%"><figcaption>Ramp 1</figcaption></figure>
+      <figure><img src="img/g-tools.jpg" alt="Tool chests, oils and parts on the garage shelves"><figcaption>Fully equipped</figcaption></figure>
+      <figure><img src="img/g-reception.jpg" alt="The reception entrance at Ashworth Garage"><figcaption>Reception</figcaption></figure>
     </div>
   </div>
 </section>
@@ -681,14 +686,17 @@ body.owner #app{display:block}
 
 <section id="about">
   <div class="wrap about">
-    <div class="pic">
-      <img src="img/andy.jpg" alt="Andy Ashworth, Ashworth Garage">
-      <div class="yrs"><b>20+</b><span>years in the motor trade</span></div>
-    </div>
     <div>
       <div class="eyebrow">Meet Andy</div>
       <h2 class="sh">From the van to our own garage.</h2>
       <blockquote>“No fancy showroom. No unnecessary upselling.”</blockquote>
+      <div class="stats">
+        <div><b>20+</b>years in the motor trade</div>
+        <div><b>5.0</b>from 126 Google reviews</div>
+        <div><b>2</b>ramps, 2 mechanics</div>
+      </div>
+    </div>
+    <div>
       <p class="sp">Andy Ashworth has spent over 20 years in the motor trade and built his name as a mobile mechanic with 126 five-star reviews. Now there's a garage in Astley too, with two ramps and two mechanics, so bigger jobs get done properly and more cars get done the same day.</p>
       <div class="facts">
         <div><b>Hours</b>Mon – Fri, 8am – 6pm</div>
